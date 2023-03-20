@@ -76,7 +76,7 @@ $(".parse").each ->
       # Create elements array
       elements = []
       # $($(@).data("parse-get"), parsed).attr $(@).data("parse-attribute"), (i, val) -> elements.push "#{val}".split(" ")
-      $($(@).data("parse-get"), parsed).text (i, val) -> elements.push "#{val}"
+      $($(@).data("parse-get"), parsed).text (i, val) -> elements.push ["#{val}"]
       console.log elements
       # elements.push [$($(@).data("parse-get"), parsed).text()]
       # Loop elements
