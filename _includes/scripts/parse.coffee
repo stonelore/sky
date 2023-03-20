@@ -19,7 +19,7 @@ $(".parse").each ->
         # File not found: create
         json =
           message: "Create"
-          content: btoa("dead\n#{load}")
+          content: btoa("sky\n#{load}")
         put_content = $.ajax api_url,
           headers: "Authorization": "token #{storage.get("login.token")}"
           method: "PUT"
@@ -75,7 +75,8 @@ $(".parse").each ->
       $(@).find(".parse-update").text updated
       # Create elements array
       elements = []
-      $($(@).data("parse-get"), parsed).attr $(@).data("parse-attribute"), (i, val) -> elements.push "#{val}".split(" ")
+      # $($(@).data("parse-get"), parsed).attr $(@).data("parse-attribute"), (i, val) -> elements.push "#{val}".split(" ")
+      $($(@).data("parse-get"), parsed).text(), (i, val) -> elements.push "#{val}".split(" ")
       # Loop elements
       elements.map (e, i) =>
         line = $("<div/>")
