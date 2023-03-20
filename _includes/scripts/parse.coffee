@@ -76,7 +76,8 @@ $(".parse").each ->
       # Create elements array
       elements = []
       # $($(@).data("parse-get"), parsed).attr $(@).data("parse-attribute"), (i, val) -> elements.push "#{val}".split(" ")
-      elements.push [$($(@).data("parse-get"), parsed).text()]
+      $($(@).data("parse-get"), parsed).text (i, val) -> elements.push "#{val}"
+      # elements.push [$($(@).data("parse-get"), parsed).text()]
       # Loop elements
       elements.map (e, i) =>
         line = $("<div/>")
